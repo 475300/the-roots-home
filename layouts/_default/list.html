@@ -20,7 +20,8 @@
                         {{ path.Base .Path }}{{ else }}{{ path.Base $item.RelPermalink }} 
                     {{end}} 
                 {{ else }}
-                {{ path.Base $item.RelPermalink }} 
+                    <!-- {{ path.Base $item.RelPermalink }}  -->
+                    {{path.Base .Title}}
                 {{end}}
             </a>
         </h3>
