@@ -6,13 +6,22 @@
             <time class="date-published" datetime="{{ .Date.Format "2006-01-02T15:04:05+07:00" | safeHTML }}" itemprop="datePublished">
                 {{ .Date.Format "2006.1.2" }}，{{index $.Site.Data.weekday (printf "%d" .Date.Weekday)}}
             </time>
-            {{ with .Params.tags }}
-            <ul id="tags">
-              {{ range . }}
-                <li> <a href="{{ "tags/" | absURL }}{{ . | urlize }}">#{{ . }}</a> </li>
-              {{ end }}
-            </ul>
-            {{ end }}
+            <span>
+                {{ with .Params.Authors }}
+                <ul id="authors">
+                  {{ range . }}
+                    <li> <a href="{{ "authors/" | absURL }}{{ . | urlize }}">@{{ . }}</a> </li>
+                  {{ end }}
+                </ul>
+                {{ end }}
+                {{ with .Params.tags }}
+                <ul id="tags">
+                    {{ range . }}
+                        <li> <a href="{{ "tags/" | absURL }}{{ . | urlize }}">#{{ . }}</a> </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </span>
         </span>
     </header>
     <div class="post-content" itemprop="articleBody">

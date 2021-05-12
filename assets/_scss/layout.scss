@@ -62,10 +62,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: $grey-color;
 
-    ul{
+    span{
       float: right;
-      li{
+      ul{
+        margin-left: 13px;
         display: inline-block;
+        li{
+          display: inline-block;
+          margin-left: 5px;
+        }
       }
     }
   }
