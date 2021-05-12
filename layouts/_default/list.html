@@ -9,7 +9,13 @@
             {{ if eq .Kind "page" }}
             <ion-icon name="document-text-outline"></ion-icon>&nbsp;
             {{ else if eq .Kind "term"}}
-            <ion-icon name="bookmarks-outline"></ion-icon>&nbsp;
+                {{ if eq .Data.Term "enel" }}
+                <ion-icon name="male-outline"></ion-icon>&nbsp;
+                {{ else if eq .Data.Term "sajiner" }}
+                <ion-icon name="female-outline"></ion-icon>&nbsp;
+                {{ else }}
+                <ion-icon name="bookmarks-outline"></ion-icon>&nbsp;
+                {{ end }}
             {{ else }}
             <ion-icon name="folder-outline"></ion-icon>&nbsp;
             {{ end }} 
