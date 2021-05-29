@@ -1,8 +1,9 @@
 {{ $video := (.Get "src") }}
 {{ $video_type := strings.TrimPrefix "." (path.Ext (.Get "src")) }}
+{{ $width := (.Get "width")}}
 
 <p>
-  <video controls=true width="700px">
+  <video controls=true width="{{$width}}">
     <source src="{{ $video }}" type="video/{{$video_type}}">
   </video>
 </p>
